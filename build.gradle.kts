@@ -1,5 +1,6 @@
 import io.kotless.KotlessConfig.Optimization.MergeLambda
 import io.kotless.plugin.gradle.dsl.KotlessConfig.Optimization.Autowarm
+import io.kotless.plugin.gradle.dsl.Webapp.Route53
 import io.kotless.plugin.gradle.dsl.kotless
 
 plugins {
@@ -43,8 +44,10 @@ kotless {
         }
     }
     webapp {
+        route53 = Route53("kotlin-version", "aws.icerock.dev")
+
         lambda {
-            memoryMb = 128
+            memoryMb = 256
 
             kotless {
                 packages = setOf("dev.icerock.kotless.kotlinversion")
