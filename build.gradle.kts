@@ -1,5 +1,4 @@
 import io.kotless.KotlessConfig.Optimization.MergeLambda
-import io.kotless.plugin.gradle.dsl.KotlessConfig
 import io.kotless.plugin.gradle.dsl.KotlessConfig.Optimization.Autowarm
 import io.kotless.plugin.gradle.dsl.kotless
 
@@ -15,6 +14,11 @@ repositories {
 
 dependencies {
     implementation("io.kotless:kotless-lang:0.1.7-beta-5")
+    implementation("io.ktor:ktor-client-core:1.5.3")
+    implementation("io.ktor:ktor-client-cio:1.5.3")
+    implementation("com.gitlab.mvysny.konsume-xml:konsume-xml:0.14")
+
+    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:1.4.31")
 }
 
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
